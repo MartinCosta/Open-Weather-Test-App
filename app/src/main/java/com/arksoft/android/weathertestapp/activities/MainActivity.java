@@ -1,7 +1,9 @@
-package com.arksoft.android.weathertestapp;
+package com.arksoft.android.weathertestapp.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.arksoft.android.weathertestapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
