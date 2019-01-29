@@ -11,12 +11,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.arksoft.android.weathertestapp.interfaces.BroadcastKey;
@@ -65,7 +62,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0 ,0 ,this);
         weatherFetch();
-
     }
 
     @Override
@@ -151,8 +147,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             }
         });
     }
-
-
 
     /**
      *

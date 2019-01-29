@@ -112,11 +112,9 @@ public class LocationFragment extends Fragment {
         switch (locaNumber){
             case 0:
                 displayInfo(LocationsTon.get().getCurrentLocation());
-
                 break;
             case 1:
                 displayInfo(LocationsTon.get().getNewYorkLocation());
-
                 break;
             case 2:
                 displayInfo(LocationsTon.get().getTokyoLocation());
@@ -160,8 +158,6 @@ public class LocationFragment extends Fragment {
         List<Integer> list2 = new ArrayList<>();
         List<Integer> list3 = new ArrayList<>();
         List<Integer> list4 = new ArrayList<>();
-
-
 
         for(int i = 0; i< location.getList().size(); i++) {
 
@@ -214,11 +210,9 @@ public class LocationFragment extends Fragment {
         switch (locaNumber){
             case 0:
                 displayInfo(LocationsTon.get().getCurrentLocation());
-
                 break;
             case 1:
                 displayInfo(LocationsTon.get().getNewYorkLocation());
-
                 break;
             case 2:
                 displayInfo(LocationsTon.get().getTokyoLocation());
