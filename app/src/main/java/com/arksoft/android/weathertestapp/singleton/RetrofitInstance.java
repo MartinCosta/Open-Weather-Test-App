@@ -24,4 +24,10 @@ public class RetrofitInstance {
         }
         return retrofit;
     }
+
+    // We create a private default constructor so we assure always there is only one instances of
+    //retrofit created on the app
+    private RetrofitInstance(){
+
+    }
 }
