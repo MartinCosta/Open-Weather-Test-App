@@ -7,4 +7,6 @@
     <string name="thursday">Jueves</string>
     <string name="friday">Viernes</string>
     <string name="saturday">Sabado</string>
+    <string name="max">Max</string>
+    <string name="min">Min</string>
 </resources>

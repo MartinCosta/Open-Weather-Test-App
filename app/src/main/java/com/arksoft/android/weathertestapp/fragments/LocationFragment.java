@@ -16,8 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.arksoft.android.weathertestapp.R;
+import com.arksoft.android.weathertestapp.activities.MainActivity;
 import com.arksoft.android.weathertestapp.interfaces.BroadcastKey;
 import com.arksoft.android.weathertestapp.model.LocationWeather;
 import com.arksoft.android.weathertestapp.singleton.LocationsTon;
@@ -145,7 +147,6 @@ public class LocationFragment extends Fragment {
         mSwipeRefreshLayout.setRefreshing(false);
     }
 
-
     public void displayInfo(LocationWeather location){
 
         mLocationTitle.setText(location.getCity().getName());
@@ -169,7 +170,6 @@ public class LocationFragment extends Fragment {
             if (weatherDate.equals(addDayToCurrentDate(1))) {
                 list.add(temp);
                 Collections.sort(list);
-
             }
             else if(weatherDate.equals(addDayToCurrentDate(2))){
                 list2.add(temp);
@@ -184,14 +184,20 @@ public class LocationFragment extends Fragment {
                 Collections.sort(list4);
             }
         }
-        mDay2MinTemp.setText("" + list.get(0));
-        mDay2MaxTemp.setText("" + list.get(list.size() - 1));
-        mDay3MinTemp.setText("" + list2.get(0));
-        mDay3MaxTemp.setText("" + list2.get(list2.size()-1));
-        mDay4MinTemp.setText("" + list3.get(0));
-        mDay4MaxTemp.setText("" + list3.get(list3.size()-1));
-        mDay5MinTemp.setText("" + list4.get(0));
-        mDay5MaxTemp.setText("" + list4.get(list4.size() - 1));
+
+        if(list.size() > 0 && list2.size() > 0 && list3.size() > 0 && list4.size() > 0) {
+            mDay2MinTemp.setText("" + list.get(0));
+            mDay2MaxTemp.setText("" + list.get(list.size() - 1));
+            mDay3MinTemp.setText("" + list2.get(0));
+            mDay3MaxTemp.setText("" + list2.get(list2.size() - 1));
+            mDay4MinTemp.setText("" + list3.get(0));
+            mDay4MaxTemp.setText("" + list3.get(list3.size() - 1));
+            mDay5MinTemp.setText("" + list4.get(0));
+            mDay5MaxTemp.setText("" + list4.get(list4.size() - 1));
+        }
+        else {
+            Toast.makeText(getActivity(), "Error displaying extended forecast...Check your device date", Toast.LENGTH_LONG).show();
+        }
     }
 
     public String addDayToCurrentDate(int days){
