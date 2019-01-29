@@ -1,8 +1,6 @@
 package com.arksoft.android.weathertestapp.singleton;
 
 
-import android.location.Location;
-
 import com.arksoft.android.weathertestapp.model.LocationWeather;
 
 public class LocationsTon {

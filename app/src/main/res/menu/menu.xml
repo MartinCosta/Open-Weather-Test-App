@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/current_location_menu"
+        android:title="Actual"
+        android:showAsAction="ifRoom"/>
+    <item android:id="@+id/new_york_menu"
+        android:title="Nueva York" />
+    <item android:id="@+id/tokyo_menu"
+        android:title="Tokyo" />
+    <item android:id="@+id/roma_menu"
+        android:title="Roma" />
+    <item android:id="@+id/moscu_menu"
+        android:title="Moscu" />
+</menu>
