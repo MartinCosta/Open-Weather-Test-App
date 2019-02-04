@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         LocalBroadcastManager.getInstance(this).registerReceiver(mBroadcastReceiverMain,
                 new IntentFilter(BroadcastKey.UPDATE_KEY_BROADCAST));
 
+        Toast.makeText(MainActivity.this, "Please Turn On your GPS if your are using an Emulator", Toast.LENGTH_LONG).show();
+
         //Request permissions for Localization and gps use.
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED
@@ -59,8 +61,13 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             if (Build.VERSION.SDK_INT >= 23) { // Marshmallow
                 ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
             }
+            else{
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0 ,0 ,this);
+            }
         }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0 ,0 ,this);
+        else{
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0 ,0 ,this);
+        }
         weatherFetch();
     }
 
